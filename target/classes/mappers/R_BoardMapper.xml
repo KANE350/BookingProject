@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="app.spring.third.R_BoardMapper">
+  
+  		<select id="selectOne" resultType="ReviewBoard">
+		  	SELECT  * FROM r_board
+			WHERE board_idx = #{board_idx}
+  		</select>
+  
+  
+  
+		<select id="selectList" resultType="ReviewBoard">
+  			select * from (
+				select rownum rnum, b.* 
+					from (SELECT * FROM r_board
+						
+							<include refid="find"/>
+			 
+				order by board_idx desc) b)
+			where rnum between #{startNum} and #{endNum}
+  		
+  		</select>
+	
+		<insert id="insert" >
+  			<!-- insert문 전에 select문을 실행해서 Board의 bnum필드에 set해라 -->
+	  		<selectKey keyProperty="board_idx" resultType="int" order="BEFORE">
+	  			select RB_SEQ.nextval from dual
+	  		</selectKey>
+	  		INSERT INTO r_board(board_idx,room_name,board_id,board_title,board_content)
+			VALUES (#{board_idx}, #{room_name}, #{board_id}, #{board_title}, #{board_content})
+  		</insert>
+
+			<!-- 조회조건문 sql문 -->
+  	<sql id="find">
+  				<if test="findkey=='board_id'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='board_title'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='board_content'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='subcon'">
+					WHERE board_title LIKE '%' || #{findvalue}  || '%' 
+					OR board_content LIKE '%' || #{findvalue}  || '%' 
+				</if>
+  	</sql>
+		
+			<!-- 조회수 +1 -->
+  	<update id="update_readcnt">
+  		update r_board
+		set board_views=board_views +1
+		where board_idx = #{board_idx}
+  	</update>
+  	
+  	<update id="updateLikeCnt">
+  		UPDATE r_board
+		SET board_likes = board_likes +1
+		WHERE board_idx = #{board_idx}
+  	</update>
+  	
+  	<delete id="delete">
+	  	DELETE FROM r_board
+		WHERE board_idx = #{board_idx}
+  	</delete>
+  	
+  	
+  	<update id="update">
+  		UPDATE r_board
+		SET board_id =#{board_id},
+		board_title = #{board_title},
+		board_content =#{board_content},
+		board_modidate= sysdate
+		WHERE board_idx = #{board_idx}
+  	</update>
+  	
+  	 	<!-- 전체게시물수 구하기 -->
+	<select id="select_totalCnt" resultType="int">
+		SELECT COUNT(*) totalCnt FROM r_board
+		<include refid="find"/>
+	</select>
+  	
+		
+  </mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="app.spring.third.R_BoardFileMapper">
+	 <select id="selectList" resultType="Reviewfile">
+  		SELECT * FROM reviewfile
+		WHERE board_idx = #{board_idx}
+  	</select>
+		
+	<insert id="insert">
+			<selectKey keyProperty="rf_idx" resultType="int" order="BEFORE">
+	  			select RF_SEQ.nextval from dual
+	  		</selectKey>
+  		INSERT INTO reviewfile(rf_idx, board_idx, rf_filename)
+		VALUES(#{rf_idx}, #{board_idx}, #{rf_filename})
+  	</insert>	
+  	
+  	<select id="selectOne" resultType="Reviewfile">
+  		SELECT * FROM reviewfile
+		WHERE rf_idx = #{rf_idx}
+  	</select>
+
+	<delete id="delete">
+	  	DELETE FROM reviewfile
+		WHERE rf_idx = #{rf_idx}
+  	</delete>
+		
+  </mapper>

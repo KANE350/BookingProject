@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="app.spring.third.C_BoardMapper">
+	<select id="selectOne" resultType="ComuBoard">
+		  	SELECT  * FROM c_board
+			WHERE cboard_idx = #{cboard_idx}
+  		</select>
+  
+  
+  
+		<select id="selectList" resultType="ComuBoard">
+  			select * from (
+				select rownum rnum, b.* 
+					from (SELECT * FROM c_board
+						
+							<include refid="find"/>
+			 
+				order by cboard_idx desc) b)
+			where rnum between #{startNum} and #{endNum}
+  		
+  		</select>
+	
+		<insert id="insert" >
+  			<!-- insert문 전에 select문을 실행해서 Board의 bnum필드에 set해라 -->
+	  		<selectKey keyProperty="cboard_idx" resultType="int" order="BEFORE">
+	  			select member_idx.nextval from dual
+	  		</selectKey>
+	  		INSERT INTO c_board(cboard_idx,cboard_id,cboard_title,cboard_content)
+			VALUES (#{cboard_idx}, #{cboard_id}, #{cboard_title}, #{cboard_content})
+  		</insert>
+
+			<!-- 조회조건문 sql문 -->
+  	<sql id="find">
+  				<if test="findkey=='cboard_id'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='cboard_title'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='cboard_content'">
+					WHERE ${findkey} LIKE '%' || #{findvalue} || '%'
+				</if>
+				<if test="findkey=='subcon'">
+					WHERE cboard_title LIKE '%' || #{findvalue}  || '%' 
+					OR cboard_content LIKE '%' || #{findvalue}  || '%' 
+				</if>
+  	</sql>
+		
+			<!-- 조회수 +1 -->
+  	<update id="update_readcnt">
+  		update c_board
+		set cboard_views=cboard_views +1
+		where cboard_idx = #{cboard_idx}
+  	</update>
+  	
+  	<update id="updateLikeCnt">
+  		UPDATE c_board
+		SET cboard_likes = cboard_likes +1
+		WHERE cboard_idx = #{cboard_idx}
+  	</update>
+  	
+  	<delete id="delete">
+	  	DELETE FROM c_board
+		WHERE cboard_idx = #{cboard_idx}
+  	</delete>
+  	
+  	
+  	<update id="update">
+  		UPDATE c_board
+		SET cboard_id =#{cboard_id},
+		cboard_title = #{cboard_title},
+		cboard_content =#{cboard_content},
+		cboard_modidate= sysdate
+		WHERE cboard_idx = #{cboard_idx}
+  	</update>
+  	
+  	 	<!-- 전체게시물수 구하기 -->
+	<select id="select_totalCnt" resultType="int">
+		SELECT COUNT(*) totalCnt FROM c_board
+		<include refid="find"/>
+	</select>
+	
+
+
+		
+  </mapper>

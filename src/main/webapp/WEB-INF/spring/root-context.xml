@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->	
+	<!--환경설정 객체-->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:/application.properties"/>
+		<property name="fileEncoding" value="utf-8"/>
+	</bean>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}"/>
+		<property name="url" value="${database.url}"/>
+		<property name="username" value="${database.username}"/>
+		<property name="password" value="${database.password}"/>
+	</bean>
+	
+	
+	
+	
+	<!-- 마이바티스 factory객체 생성 (스프링에게 만들자고 알리기)-->
+	<!--세션을 만드는 공장을 만들기 위해 아이디 소스를 참조로 해서 아래의 데이터베이스를 만든다.-->
+	<bean id="sqlSessionFactory"  class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:/mybatisConfig.xml"/>
+		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"/>	<!--매퍼파일 위치를 생성보다 먼저 지정해놨다.-->
+	</bean>
+	
+	<!-- 마이바티스 세션 생성 -->
+	<!-- sqlSessionTemplate:객체관리를 알아서 해준다 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+	<!--파일저장경로(savedir)의 객체 생성 요청-->
+	<!--new String("D:/kgr/savedir")-->
+	<!--이런 객체를 사용하기 위해서는 오토와이어드 하면 된다. memberserviceimpl-->
+	<bean id="savedir" class="java.lang.String"><!--기본 패키지이기 때문에 임포트 하지 않고 사용-->
+		<constructor-arg value="D:/kgr/savedir"/>
+	</bean>
+	
+	<!--암호화 객체-->
+	<bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	</bean>
+	
+	<!--이메일 전송-->
+	<!-- 비밀번호 2단계 인증 --> 
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/>
+		<property name="port" value="587"/><!--구글메일의 TLS/STARTTLS용 포트 사용-->
+		<property name="username" value="pinpin3573"/>
+		<property name="password" value="wxqrbwljnhdjcnwp"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--트랜잭션 매니저 객체 생성(데이터 소스를 관리(commit, rollback)-->
+	<!--ref는 위에 작성한 데이터 소스를 참조했다. name은 트랜잭션 안에 있는 필드를 참조-->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<!--트랜젝션 어노테이션 사용 가능하게 추가(네임스페이스에서 tx체크)-->
+	<tx:annotation-driven/>
+</beans>
