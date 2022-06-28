@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="app.spring.third.C_replyMapper">
+	<insert id="insert">
+  		INSERT INTO c_reply(creply_idx, cboard_idx ,creply_id, creply_content, cr_restep, cr_relevel)
+		VALUES(cr_seq.nextval,#{cboard_idx}, #{creply_id}, #{creply_content},#{cr_restep},#{cr_relevel})
+  	</insert>
+	
+	<update id="update">
+  		UPDATE c_reply
+		SET creply_content= #{creply_content},
+		modidate = sysdate 
+		WHERE creply_idx =#{creply_idx}
+  	</update>	
+
+	<delete id="delete">
+  		DELETE FROM c_reply
+		WHERE creply_idx = #{creply_idx}
+  	</delete>
+  	
+  	<select id="selectList" resultType="ComuReply">
+  		SELECT * FROM c_reply
+		WHERE cboard_idx = #{cboard_idx}
+		ORDER BY cr_restep
+  	</select>
+  	
+  	<update id="updateRestep">
+  		UPDATE c_reply
+		SET cr_restep= cr_restep+1
+		WHERE cboard_idx = #{cboard_idx}
+		AND cr_restep >= #{cr_restep}
+  	</update>
+		
+  </mapper>

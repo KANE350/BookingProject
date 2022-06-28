@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<settings>
+		<!--널 허용:메퍼에서 값을 가져올 때 null 가능-->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<!-- 매퍼 resultType의 알리아스 --> 
+	<typeAliases>
+		<typeAlias type="app.spring.third.dto.Member" alias="Member"/>
+		<typeAlias type="app.spring.third.dto.ReviewBoard" alias="ReviewBoard"/>
+		<typeAlias type="app.spring.third.dto.ComuBoard" alias="ComuBoard"/>
+		<typeAlias type="app.spring.third.dto.Reviewfile" alias="Reviewfile"/>
+		<typeAlias type="app.spring.third.dto.Reply" alias="Reply"/>
+		<typeAlias type="app.spring.third.dto.ComuReply" alias="ComuReply"/>
+	</typeAliases>
+
+</configuration>  
