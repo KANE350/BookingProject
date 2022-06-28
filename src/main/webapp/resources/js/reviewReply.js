@@ -113,7 +113,7 @@ window.addEventListener('load',()=>{
 			const reply = document.getElementById(`reply${reply_idx}`);
 			const divReplyAdd = document.getElementById('divReplyAdd');
 			reply.after(divReplyAdd);
-			alert();
+		
 			//댓글추가 div 보이기
 			divReplyAdd.style.display = '';
 	
@@ -179,19 +179,20 @@ window.addEventListener('load',()=>{
 			relevel,
 		};
 		
-		// jquery 서버호출
-		$.ajax({
-			url : '/third/reply/',
-			type: 'post',
-			contentType : 'application/json', //보내는 데이터의 타입
-			data: JSON.stringify(data), //보내는 데이터
-			dataType : 'text', //받을 데이터의 타입 
-			success : (text)=>{
-				console.log(text);
-				replyList();
+	fetch('/third/reply/' , {
+			method : 'post',
+			headers : {
+				'Content-Type' : 'application/json' //json문자열 전송
 			},
-			error : console.error
-		});
+			body : JSON.stringify(data),//object->json문자열로 변경
+		})
+		.then(res=>res.text())
+		.then(text =>{
+			console.log(text);
+			replyList();
+		})
+			.catch (console.error)
+			
 	});
 	
 	

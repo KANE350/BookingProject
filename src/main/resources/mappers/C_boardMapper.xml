@@ -27,7 +27,7 @@
 		<insert id="insert" >
   			<!-- insert문 전에 select문을 실행해서 Board의 bnum필드에 set해라 -->
 	  		<selectKey keyProperty="cboard_idx" resultType="int" order="BEFORE">
-	  			select cboard_idx.nextval from dual
+	  			select cb_seq.nextval from dual
 	  		</selectKey>
 	  		INSERT INTO c_board(cboard_idx,cboard_id,cboard_title,cboard_content)
 			VALUES (#{cboard_idx}, #{cboard_id}, #{cboard_title}, #{cboard_content})
