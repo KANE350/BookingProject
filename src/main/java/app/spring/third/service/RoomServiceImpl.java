@@ -41,4 +41,10 @@ public class RoomServiceImpl implements RoomService {
 
 		return roomRepository.getroom_idx(room_name);
 	}
+	
+	//룸정보 상세보기
+	@Override
+	public Room selectOne(int room_idx) {
+		return roomRepository.selectOne(room_idx);
+	}
 }

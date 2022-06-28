@@ -79,7 +79,7 @@
 								<tr>
 									<td><input type="radio" name="chk"></td>
 									<td id="imgtd"><img
-										src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
+										src="${path}/resources/images/${info.ROOMFILE_FILENAME}" width="150"
 										height="50"></td>
 									<td >${info.ROOM_NAME}</td>
 									

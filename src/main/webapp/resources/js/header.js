@@ -11,7 +11,7 @@ function aLogout(e, path) {
 	}
 }
 	
-window / addEventListener('load', () => {
+
 	const sessionMember_id = $('#sessionMember_id').text().trim();
 
 	if (sessionMember_id == '') {//로그인 전
@@ -23,7 +23,6 @@ window / addEventListener('load', () => {
 		document.getElementById("aLogout").style.display = '';
 		document.getElementById("aJoin").style.display = 'none';
 	}
-});
 
 
 

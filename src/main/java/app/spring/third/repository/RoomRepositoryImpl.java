@@ -42,4 +42,10 @@ public class RoomRepositoryImpl implements RoomRepository{
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(path+".getroom_idx", room_name);
 	}
+	
+	//룸 상세정보 조회
+	@Override
+	public Room selectOne(int room_idx) {
+		return sqlSession.selectOne(path+".selectOne", room_idx);
+	}
 }

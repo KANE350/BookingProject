@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="${path}/resources/js/login.js"></script>
-<script type="text/javascript" src="${path}/resources/js/header.js"></script>
+
 
 </head>
 <body>
@@ -65,7 +65,7 @@
 		</div>
 	</nav>
 
-
+<script type="text/javascript" src="${path}/resources/js/header.js"></script>
 
 
 

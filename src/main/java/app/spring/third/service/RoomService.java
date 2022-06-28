@@ -19,4 +19,7 @@ public interface RoomService {
 	List<Map<String, Object>> roomNroomfile();
 	
 	int getroom_idx(String string);
+	
+	//룸 상세보기
+	Room selectOne(int room_idx);
 }
