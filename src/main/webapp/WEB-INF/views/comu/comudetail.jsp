@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="${path}/resources/css/boardstyle.css" rel="stylesheet" />
 <body>
 <!-- 핸들바 탬플릿 cdn연결 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
@@ -96,8 +97,8 @@
 	
 	<!-- 댓글추가 -->
 	<div id='divReplyAdd'>
-		<input type="text" value="0" id="cr_restep"> <!-- 부모의 restep -->
-		<input type="text" value="0" id="cr_relevel"> <br> <!-- 부모의 relevel -->
+		<input type="hidden" value="0" id="cr_restep"> <!-- 부모의 restep -->
+		<input type="hidden" value="0" id="cr_relevel"> <br> <!-- 부모의 relevel -->
 		작성자: <input type="text" id="creply_id" class="replyarea"> <br>
 		내용: <textarea rows="3" cols="25" id="creply_content" class="replyarea"></textarea>
 		<button id="replyAdd" class="btn btn-dark border border-white" >저장</button>
@@ -107,7 +108,7 @@
 	<!-- 댓글수정 -->
 	<div id='divReplyModify'>
 		<input type="hidden" id="replyrnumModify"> <br>
-		내용: <textarea rows="3" cols="25" id="replycontentModify"></textarea><br>
+		내용: <textarea rows="3" cols="25" id="replycontentModify" style="color:#000000"></textarea><br>
 		<button id="replyModify" class="btn btn-dark border border-white" >저장</button>
 		<button id="replyModifyCancel" class="btn btn-dark border border-white" >취소</button>
 	</div>
