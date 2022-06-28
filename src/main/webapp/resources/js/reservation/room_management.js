@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 
 window.addEventListener('load', ()=>{
 	// 전체 리스트
@@ -5,8 +8,7 @@ window.addEventListener('load', ()=>{
 		e.preventDefault();
 		
 		console.log('ajax');
-		$.ajax({ 
-	
+		$.ajax({
 			url : '/third/Allreserv',
 			type : 'get',
 			dataType : 'json', // 받을 데이터의 타입
@@ -17,7 +19,7 @@ window.addEventListener('load', ()=>{
 //					var h3 = document.createElement('h3');
 //					var h3text = document.createTextNode('등록된 데이터가 없습니다.');
 					
-					
+					console.log($('#output22'));
 					
 					$('#output22')[0].innerHTML ='<h3>등록된 데이터가 없습니다.</h3>';
 					

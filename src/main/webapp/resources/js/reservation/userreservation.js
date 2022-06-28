@@ -5,19 +5,20 @@
 function btnclick(path,e){
 	e.preventDefault();
 	var idx = [];
+	alert('취소버튼 클릭');
 
 	$("input[name=box]:checked").each(function(){
 		var chk = $(this).val();
 		idx.push(chk);
-	
 	})
 	
 	if(idx.length == 0){
 		alert('취소 데이터를 선택해주세요.');
 		return ;
 	}
+	console.log(idx);
 	document.getElementById('frm_reserv').method ='post';
-	document.getElementById('frm_reserv').action=path+'/Reservation/reservation';
+	document.getElementById('frm_reserv').action=path+'/reservation/userreservation?idx='+idx;
 	document.getElementById('frm_reserv').submit();
 	
 

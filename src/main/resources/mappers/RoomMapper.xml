@@ -21,13 +21,14 @@
 	<select id="select_roomNroomfile" resultType="map">
 		select * from room full join roomfile on room.room_idx = roomfile.room_idx
 	</select>
+	
 	<select id="getroom_idx" resultType="int">
 		select room_idx from room
 		where room_name =#{room_name}
 	</select>
 	
 	<!--방 상세보기-->
-	<select id="selectOne" resultType="Room">
-		SELECT * FROM room WHERE room_idx= #{room_idx}
-	</select>
+   <select id="selectOne" resultType="Room">
+      SELECT * FROM room WHERE room_idx= #{room_idx}
+   </select>
 </mapper>

@@ -11,6 +11,7 @@
 
 <%@ include file="header.jsp" %>
 	<h2>회원관리 창</h2>
+		<%-- ${mlist} --%>
 	
 	<table>
 		<thead>

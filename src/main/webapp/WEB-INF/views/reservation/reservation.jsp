@@ -13,7 +13,7 @@
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon"
-	href="${path}/resources/images/favicon.ico" />
+	href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
@@ -21,27 +21,7 @@
 </head>
 <script type="text/javascript" src="${path}/resources/js/reservation/reservation.js"> </script>
 <body style="overflow: auto;">
-	<!-- Responsive navbar-->
-	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<a class="navbar-brand" href="#!">Start Bootstrap</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Blog</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav> -->
+	
 	<%@ include file="../header.jsp" %>
 	
 	<div class="d-flex"  id="wrapper">
@@ -55,9 +35,8 @@
 			<%@ include file="./calendar.jsp"%>
 		</div>
 		<div id="content">
-			
 			<div align="center">
-				<form id="frm_reserv" action="${path}/Reservation/reservation" method="post">
+				<form id="frm_reserv" action="${path}/reservation/reservation" method="post">
 					
 					<div class="dateselect">
 						<span class="day">입실</span> <input type="date" class="startdate" name="re_startdate"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -77,10 +56,9 @@
 						<tbody>
 							<c:forEach var="info" items="${roomNroomfile}">
 								<tr>
-									<td><input type="radio" name="chk"></td>
-									<td id="imgtd"><img
-										src="${path}/resources/images/${info.ROOMFILE_FILENAME}" width="150"
-										height="50"></td>
+									<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}" ></td>
+									<td id="imgtd">
+										<img src="${path}/resources/image/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
 									<td >${info.ROOM_NAME}</td>
 									
 						
@@ -94,7 +72,6 @@
 					</div>
 				</form>
 			</div>
-
 		</div>
 	</div>
 

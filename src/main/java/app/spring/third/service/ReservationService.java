@@ -11,7 +11,7 @@ public interface ReservationService{
 
 	
 	// 예약 등록 
-	int insert(Reservation reservation, String roominfo,HttpSession session);
+	int insert(Reservation reservation, HttpSession session);
 	
 	
 	// 사용자 예약현황

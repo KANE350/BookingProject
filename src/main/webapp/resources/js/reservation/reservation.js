@@ -73,7 +73,7 @@ function btnclick(path, event){
 		
 		var rowData = new Array();
 		var tdArr = new Array();
-		var checkbox = $("input[name=chk]:checked");
+		var checkbox = $("input[name=room_idx]:checked");
 		
 		// 체크된 체크박스 값을 가져온다
 		checkbox.each(function(i) {
@@ -98,17 +98,16 @@ function btnclick(path, event){
 			
 					
 			
-			// 가져온 값을 배열에 담는다.
+
 			
 			tdArr.push(roominfo);
-			//tdArr.push(person);
+
 			
 			console.log("roominfo : " + roominfo);
-			//console.log("person : " + person);
+
 			document.getElementById('frm_reserv').method='post';
-			//document.getElementById('frm_reserv').action=path+'/Reservation/reservation?roominfo='+roominfo+'?re_personnel='+id;
-			document.getElementById('frm_reserv').action=path+'/Reservation/reservation?roominfo='+roominfo;
-			//document.getElementById('frm_reserv').action=path+'/Reservation/reservation';
+
+			document.getElementById('frm_reserv').action=path+'/reservation/reservation';
 			document.getElementById('frm_reserv').submit();
 			
 		

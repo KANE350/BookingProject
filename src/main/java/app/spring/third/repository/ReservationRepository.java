@@ -19,7 +19,7 @@ public interface ReservationRepository {
 	
 	
 	// 사용자별 예약 취소
-	int delreservation(List<Del_userNreserv> dellist);
+	int delreservation(Del_userNreserv dellist);
 	
 	//  사용자 예약상태 변경 
 	int upreserv(String reserv_num);

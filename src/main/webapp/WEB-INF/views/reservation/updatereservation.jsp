@@ -13,7 +13,7 @@
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon"
-	href="${path}/resources/images/favicon.ico" />
+	href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
@@ -27,7 +27,7 @@
 
 
 	<!-- Responsive navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand" href="#!">Start Bootstrap</a>
 			<button class="navbar-toggler" type="button"
@@ -46,8 +46,9 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav> -->
 
+	<%@ include file="../header.jsp" %>
 
 	<div class="d-inline-flex" id="wrapper">
 
@@ -62,7 +63,7 @@
 		</div>
 		
 		<div id="content">
-			<form id="frm_reserv" action="${path}/Reservation/updatereservation"
+			<form id="frm_reserv" action="${path}/reservation/updatereservation"
 				method="post">
 				<div>
 					<span>입실</span> 
@@ -85,13 +86,11 @@
 						<c:forEach var="info" items="${roomNroomfile}">
 							
 							<tr>
-								<td><input type="radio" name="chk"></td>
-								<td id="imgtd"><img
-									src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
+								<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}"></td>
+								<td id="imgtd">
+								<img src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
 									height="50"></td>
-								<td>${info.ROOM_NAME}</td>
-
-								<td></td>
+								<td><span> ${info.ROOM_NAME}</span></td>
 							</tr>
 						</c:forEach>
 					</tbody>

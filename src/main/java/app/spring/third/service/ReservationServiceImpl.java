@@ -24,27 +24,21 @@ public class ReservationServiceImpl implements ReservationService{
 	private ReservationRepository reservationrepo;
 	
 	@Autowired
-	private RoomService roomServicerepo; //레파지도리?
+	private RoomService roomServicerepo;
 	
 	// 예약등록
 	@Override
-	public int insert(Reservation reservation, String roominfo,HttpSession session) {
+	public int insert(Reservation reservation, HttpSession session) {
 		
 		//return reservationrepo.insert(reservation);
+		
+		System.out.println("예약 등록 service - 예약내용"+reservation);
 		// 사용자 예약 현황
 		List<Map<String, Object>> userNreserv = reservationrepo.getuserNreserv();
-		String userid = session.getAttribute("member_id").toString(); 
-
-		// 방 번호 구하기 
-		int room_idx =roomServicerepo.getroom_idx(roominfo);
-		reservation.setRoom_idx(room_idx);
 		
 		// 결과 담는 용도
 		List<Map<String, Object>> result = new ArrayList<Map<String,Object>>();
-		Map<String, Object> resultmap =new HashMap<String, Object>();
-
-		// 날짜 비교용
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	
 		
 		for(Map<String, Object> map : userNreserv) {
 			System.out.println("사용자 아이디 : "+map.get("MEMBER_ID"));
@@ -52,17 +46,14 @@ public class ReservationServiceImpl implements ReservationService{
 			System.out.println("예약 날짜"+map.get("RE_STARTDATE"));
 			System.out.println("퇴소 날짜"+map.get("RE_ENDDATE"));
 			//예약 날짜가 동일하다면 && 방번호 동일 유무 확인
-			if(reservation.getRe_startdate() == map.get("RE_STARTDATE") && roominfo.equals(map.get("ROOM_NAME").toString())){
-				
-				
-					return 1;
+			if(reservation.getRe_startdate() == map.get("RE_STARTDATE") && reservation.getRoom_idx() == (int) map.get("ROOM_IDX")){
+				return 1;
 					// 예약 불가 다른사람 예약
-				
 			}
 		
 		}
 		
-		reservation.setMember_id(userid);
+		
 		
 		reservation.setRe_personnel(3);
 		// 파라미터로 넘어온 값과  저장된 사용자 예약 현황을 비교한다.
@@ -89,16 +80,24 @@ public class ReservationServiceImpl implements ReservationService{
 
 	// 회원 예약 취소
 	@Override
-	public void delreservation(List<String> map, String userid) {
+	public void delreservation(List<String> idx, String userid) {
 		// TODO Auto-generated method stub
-		 Del_userNreserv del = new Del_userNreserv();
-		 List<Del_userNreserv> dellist = null;
-		 for(String reserv_id : map) {
-			 del.setReservation_idx(reserv_id);
-			 del.setUserid(userid);
-			 dellist.add(del);
+		System.out.println("파라미터"+idx);
+		 List<Del_userNreserv> dellist = new ArrayList<Del_userNreserv>();
+		 for(String reserv_id : idx) {
+			Del_userNreserv del = new Del_userNreserv();
+			System.out.println("배열 하나씩 출력"+reserv_id);
+			System.out.println("사용자 iod" + userid);
+			del.setReservation_idx(reserv_id);
+			del.setUserid(userid);
+			dellist.add(del);
+			
 		 }
-		reservationrepo.delreservation(dellist);
+		
+		 System.out.println("서비스단"+dellist);
+		 for(Del_userNreserv del : dellist) {
+		 reservationrepo.delreservation(del);
+		 }
 	}
 	// 예약정보 1건
 	@Override
@@ -110,8 +109,7 @@ public class ReservationServiceImpl implements ReservationService{
 	@Override
 	public int updatereservation(Reservation reservation, String roominfo) {
 		// 방 번호 구하기 
-		int room_idx =roomServicerepo.getroom_idx(roominfo);
-		reservation.setRoom_idx(room_idx);
+		
 		
 		int cnt = reservationrepo.updatereservation(reservation);
 		 

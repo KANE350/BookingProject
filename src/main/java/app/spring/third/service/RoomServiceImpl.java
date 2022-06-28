@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import app.spring.third.dto.Room;
 import app.spring.third.dto.RoomNReserv;
-import app.spring.third.repository.RoomRepository;
+import app.spring.third.repository.RoomRepositoryImpl;
 
 @Service
 public class RoomServiceImpl implements RoomService {
 	
 	@Autowired
-	private RoomRepository roomRepository;
+	private RoomRepositoryImpl roomRepository;
 	
 	public List<Room> selectall(){
 		return roomRepository.select_all();
@@ -34,17 +34,9 @@ public class RoomServiceImpl implements RoomService {
 		
 		return roomRepository.roomNroomfile();
 	}
-	
-	// 룸 이름을 통한 룸 번호 가져오기
-	@Override
-	public int getroom_idx(String room_name) {
-
-		return roomRepository.getroom_idx(room_name);
-	}
-	
 	//룸정보 상세보기
-	@Override
-	public Room selectOne(int room_idx) {
-		return roomRepository.selectOne(room_idx);
-	}
+	   @Override
+	   public Room selectOne(int room_idx) {
+	      return roomRepository.selectOne(room_idx);
+	   }
 }

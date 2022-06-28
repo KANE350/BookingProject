@@ -11,7 +11,7 @@
 <meta name="author" content="" />
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
-<link rel="icon" type="image/x-icon" href="${path}/resources/images/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 </head>
@@ -54,7 +54,7 @@
 			<h3>기본사항</h3>
 			<div class="img_txt">
 				<div class="left20 mat20 mobile_none">
-					<img src="${path}/resources/images/info1.jpg" alt="x" 	width="100" height="100">
+					<img src="${path}/resources/image/info1.jpg" alt="x" 	width="100" height="100">
 					<div class="right80">
 						<ul class="basic mab40">
 							<li>예약은 인터넷을 통해 365일 언제나 가능합니다.</li>
@@ -86,7 +86,7 @@
 		<h3>예약금 결제</h3>
 		<div class="img_txt">
 			<div class="left20 mat20 mobile_none">
-				<img src="${path}/resources/images/info2.jpg" alt=""
+				<img src="${path}/resources/image/info2.jpg" alt=""
 					width="140" height="140">
 			</div>
 			<div class="right80">
@@ -109,7 +109,7 @@
 		<h3>유의사항</h3>
 		<div class="img_txt">
 			<div class="left20 mat20 mobile_none">
-				<img src="${path}/resources/images/info3.jpg" alt=""
+				<img src="${path}/resources/image/info3.jpg" alt=""
 					width="140" height="140">
 			</div>
 			<div class="right80">
@@ -127,7 +127,7 @@
 		<h3>예약취소 및 예약내용 변경</h3>
 		<div class="img_txt">
 			<div class="left20 mat20 mobile_none">
-				<img src="${path}/resources/images/info4.jpg" alt=""
+				<img src="${path}/resources/image/info4.jpg" alt=""
 					width="140" height="140">
 			</div>
 			<div class="right80 yc">
@@ -146,7 +146,7 @@
 		<h3>환불기준(위약금 부과)</h3>
 		<div class="img_txt">
 			<div class="left20 mat20 mobile_none">
-				<img src="${path}/resources/images/info5.jpg" alt=""
+				<img src="${path}/resources/image/info5.jpg" alt=""
 					width="140" height="140">
 			</div>
 			<div class="right80 yc">

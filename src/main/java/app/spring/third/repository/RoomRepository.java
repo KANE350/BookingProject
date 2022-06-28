@@ -14,7 +14,6 @@ public interface RoomRepository {
 
 	List<Map<String, Object>> roomNroomfile();
 
-	int getroom_idx(String room_name);
-	
+	//룸 상세정보 조회
 	Room selectOne(int room_idx);
 }
