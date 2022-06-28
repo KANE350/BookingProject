@@ -19,5 +19,5 @@ public interface RoomService {
 	List<Map<String, Object>> roomNroomfile();
 	
 	 //룸 상세보기
-	   Room selectOne(int room_idx);
+	 Room selectOne(int room_idx);
 }

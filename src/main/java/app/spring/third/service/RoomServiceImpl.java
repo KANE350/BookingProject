@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 
 import app.spring.third.dto.Room;
 import app.spring.third.dto.RoomNReserv;
+import app.spring.third.repository.RoomRepository;
 import app.spring.third.repository.RoomRepositoryImpl;
 
 @Service
 public class RoomServiceImpl implements RoomService {
 	
 	@Autowired
-	private RoomRepositoryImpl roomRepository;
+	private RoomRepository roomRepository;
 	
 	public List<Room> selectall(){
 		return roomRepository.select_all();

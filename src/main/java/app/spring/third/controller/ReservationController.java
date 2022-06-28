@@ -43,9 +43,7 @@ public class ReservationController {
 	@Autowired
 	private RoomService roomService;
 
-	// 방 이미지
-	@Autowired
-	private RoomFileService roomfileService;
+	
 
 	// 홈
 	@GetMapping("/")

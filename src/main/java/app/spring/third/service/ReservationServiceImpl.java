@@ -1,8 +1,6 @@
 package app.spring.third.service;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +12,7 @@ import org.springframework.stereotype.Service;
 import app.spring.third.dto.Del_userNreserv;
 import app.spring.third.dto.Reservation;
 import app.spring.third.repository.ReservationRepository;
-import app.spring.third.repository.ReservationRepositoryImpl;
+import app.spring.third.repository.RoomRepository;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -23,8 +21,6 @@ public class ReservationServiceImpl implements ReservationService{
 	@Autowired
 	private ReservationRepository reservationrepo;
 	
-	@Autowired
-	private RoomService roomServicerepo;
 	
 	// 예약등록
 	@Override

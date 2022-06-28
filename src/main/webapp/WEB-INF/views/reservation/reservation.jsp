@@ -58,7 +58,7 @@
 								<tr>
 									<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}" ></td>
 									<td id="imgtd">
-										<img src="${path}/resources/image/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
+										<img src="${path}/resources/images/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
 									<td >${info.ROOM_NAME}</td>
 									
 						

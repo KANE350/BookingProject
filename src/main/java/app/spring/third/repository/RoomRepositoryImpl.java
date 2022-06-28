@@ -15,6 +15,7 @@ public class RoomRepositoryImpl implements RoomRepository{
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
 	String path = "app.spring.third.RoomMapper";
 	
 	// 전체 방정보

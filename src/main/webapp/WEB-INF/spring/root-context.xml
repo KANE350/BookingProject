@@ -43,6 +43,7 @@
 		<constructor-arg value="D:/kgr/savedir"/>
 	</bean>
 	
+	
 	<!--암호화 객체-->
 	<bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 	</bean>

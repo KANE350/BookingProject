@@ -74,7 +74,7 @@
 						<div class="room_info">
 							<p class="room_tit">
 									<a href="${path}/reservation/roominfo?room_idx=${list.ROOM_IDX}">
-									<span class="chg_font_color"><br>${list.ROOM_NAME}</span>
+									<span class="chg_font_color"><br>${list.ROOM_NAME}${list.ROOM_IDX}</span>
 									</a>
 							</p>
 							<p class="room_caption"></p>
