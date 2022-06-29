@@ -15,6 +15,7 @@ public class RoomRepositoryImpl implements RoomRepository{
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
 	String path = "app.spring.third.RoomMapper";
 	
 	// 전체 방정보
@@ -36,16 +37,9 @@ public class RoomRepositoryImpl implements RoomRepository{
 		return sqlSession.selectList(path+".select_roomNroomfile");
 	}
 
-	// 룸이름에 맞는 방 번호 가져오기
-	@Override
-	public int getroom_idx(String room_name) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne(path+".getroom_idx", room_name);
-	}
-	
 	//룸 상세정보 조회
-	@Override
-	public Room selectOne(int room_idx) {
-		return sqlSession.selectOne(path+".selectOne", room_idx);
-	}
+	   @Override
+	   public Room selectOne(int room_idx) {
+	      return sqlSession.selectOne(path+".selectOne", room_idx);
+	   }
 }

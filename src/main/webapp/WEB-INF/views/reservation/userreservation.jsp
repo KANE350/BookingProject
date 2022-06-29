@@ -12,7 +12,7 @@
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon"
-	href="${path}/resources/images/favicon.ico" />
+	href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
@@ -26,27 +26,6 @@
 
 <body>
 	
-	<!-- Responsive navbar-->
-	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<a class="navbar-brand" href="#!">Start Bootstrap</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Blog</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav> -->
 	<%@ include file="../header.jsp" %>
 	<!-- Sidebar-->
 	<div class="d-inline-flex" id="wrapper">
@@ -65,8 +44,8 @@
 		<div>	
 		<h3 align="center">내 예약정보 리스트</h3>
 		</div>
-			<c:if test="${not empty mlist}">
-				<form action = "${path}/Reservation/userreservation" method="post">
+			<c:if test="${not empty rlist}">
+				<form id="frm_reserv" action = "${path}/reservation/usereservation" method="post">
 					<table class="statustb">
 						<thead>
 							<tr>
@@ -85,7 +64,7 @@
 										<input type="checkbox" id="box" name="box" value="${list.RESERVATION_IDX}">
 									</td>
 									<td>
-										<a id="modify_reservation" href="${path}/Reservation/updatereservation?idx=${list.RESERVATION_IDX}">${list.RESERVATION_IDX}</a>
+										<a id="modify_reservation" href="${path}/reservation/updatereservation?idx=${list.RESERVATION_IDX}">${list.RESERVATION_IDX}</a>
 									</td>
 									<td>
 									<!-- 예약완료 -->
@@ -114,11 +93,10 @@
 					<button class="btnclick" onclick="btnclick('${path}', event)">예약 취소</button>
 				</form>
 			</c:if>
-			<c:if test="${empty mlist}">
+			<c:if test="${empty rlist}">
 				<div align="center" style="font-size: 12px">예약된 정보가 없습니다.</div>
 			</c:if>
 		</div>
-
 	</div>
 </body>
 </html>

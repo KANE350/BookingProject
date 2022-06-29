@@ -118,7 +118,7 @@ html, body {
         }, 
         // 이벤트 
         events: (info, success, error)=>{
-    		fetch('/third/Reservation/CallCalendar')
+    		fetch('/third/reservation/CallCalendar')
     		.then(res=>res.json())
     		.then(data=>{
     			success(data);

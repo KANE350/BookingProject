@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 </head>
+<link href="${path}/resources/css/boardstyle.css" rel="stylesheet" />
 <body>
 <!-- 핸들바 탬플릿 cdn연결 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
@@ -106,8 +106,8 @@
 	
 	<!-- 댓글추가 -->
 	<div id='divReplyAdd'>
-		<input type="text" value="0" id="restep"> <!-- 부모의 restep -->
-		<input type="text" value="0" id="relevel"> <br> <!-- 부모의 relevel -->
+		<input type="hidden" value="0" id="restep"> <!-- 부모의 restep -->
+		<input type="hidden" value="0" id="relevel"> <br> <!-- 부모의 relevel -->
 		작성자: <input type="text" id="reply_id" class="replyarea"> <br>
 		내용: <textarea rows="3" cols="25" id="reply_content" class="replyarea"></textarea>
 		<button id="replyAdd" class="btn btn-dark border border-white" >저장</button>

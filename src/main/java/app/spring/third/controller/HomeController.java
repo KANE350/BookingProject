@@ -75,59 +75,54 @@ public class HomeController {
 	}
 	
 	// page
-		@GetMapping("room_management")
-		public void room_management() {
-			System.out.println("Get Page");
-			
-			
-		}
-		
-		// 방 처리할 confirm 목록
-		@GetMapping("/room_management/room_confirm")
-		public String roomconfirm(HttpSession session, Model model) {
-			System.out.println("RoomConfirm");
-			List<Map<String, Object>> mlist =reservationService.getConfirm();
-			System.out.println(mlist);
-			model.addAttribute("confirm", mlist);
-			return "room_confirm_management";
-		}
-		
-		@PostMapping("/room_management/room_confirm")
-		public String roomconfirmcheck(RedirectAttributes rattr, HttpSession session, @RequestParam String reserv_num) {
-			System.out.println("파라미터"+reserv_num);
-			 reservationService.upreserv(reserv_num);
-			rattr.addFlashAttribute("msg", "예약확인완료");
-			return "redirect:/room_management/room_confirm";
-		}
+	@GetMapping("room_management")
+	public void room_management() {
+		System.out.println("Get Page");
 		
 		
+	}
+	
+	// 방 처리할 confirm 목록
+	@GetMapping("/room_management/room_confirm")
+	public String roomconfirm(HttpSession session, Model model) {
+		System.out.println("RoomConfirm");
+		List<Map<String, Object>> mlist =reservationService.getConfirm();
+		System.out.println(mlist);
+		model.addAttribute("confirm", mlist);
+		return "room_confirm_management";
+	}
+	
+	@PostMapping("/room_management/room_confirm")
+	public String roomconfirmcheck(RedirectAttributes rattr, HttpSession session, @RequestParam String reserv_num) {
 		
+		 reservationService.upreserv(reserv_num);
+		rattr.addFlashAttribute("msg", "예약확인완료");
+		return "redirect:/room_management/room_confirm";
+	}
+	
+	
+	
+	//객실관리  ajx
+	@ResponseBody
+	@GetMapping("Allreserv")
+	public List<Map<String, Object>> room_management(HttpSession session, Model model) {
+		//1. 전체 리스트
+		List<Map<String, Object>> mlist = reservationService.getAllreserv();
 		
-		//객실관리  ajx
-		@ResponseBody
-		@GetMapping("Allreserv")
-		public List<Map<String, Object>> room_management(HttpSession session, Model model) {
-			System.out.println("ALlreserva");
-			
-			//1. 전체 리스트
-			List<Map<String, Object>> mlist = reservationService.getAllreserv();
-			System.out.println("전체 예약 리스트"+mlist);
-		
-			return mlist;
-		}
-		
-		
-		// 멤버관리 - 관리자
-		@GetMapping("member_management")
-		public String member_management(Model model) {
-			System.out.println("member_management 접근");
-			
-			
-			List<Member> mlist = memberService.AllUser();
-				model.addAttribute("mlist", mlist);
-				System.out.println("List"+mlist);
-			return "member_management";
-		}
+	
+		return mlist;
+	}
+	
+	
+	// 멤버관리 - 관리자
+	@GetMapping("member_management")
+	public String member_management(Model model) {
+		List<Member> mlist = memberService.AllUser();
+			model.addAttribute("mlist", mlist);
+		return "member_management";
+	}
+	
+	
 		
 		
 	

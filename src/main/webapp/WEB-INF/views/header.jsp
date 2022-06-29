@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- Bootstrap icons-->
+<link rel="icon" type="image/x-icon" href="${path}/resources/images/favicon.ico" />
+
 <script type="text/javascript" src="${path}/resources/js/login.js"></script>
 
 
@@ -37,10 +40,9 @@
 
 
 
-
 	<!--부트스트랩 새로넣음-->
 	<!-- Responsive navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%">
 		<div class="container">
 			<a class="navbar-brand btn-lg" href="${path}">홈</a>
 			<button class="navbar-toggler" type="button"
@@ -52,7 +54,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item btn-lg"><a class="nav-link active"
-						aria-current="page" href="${path}/Reservation/">예약</a></li>
+						aria-current="page" href="${path}/reservation/">예약</a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
 						href="${path}/company">찾아오시는 길</a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"

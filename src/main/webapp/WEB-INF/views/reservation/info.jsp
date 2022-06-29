@@ -11,7 +11,7 @@
 <meta name="author" content="" />
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
-<link rel="icon" type="image/x-icon" href="${path}/resources/images/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 </head>

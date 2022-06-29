@@ -6,3 +6,12 @@ function imgclick(path,info){
 	window.open(url,name, option);
 }
 
+$(function() {
+	   $('.bxslider').bxSlider({
+	      slideWidth: 600,
+	      caption: true,
+	      auto: true,
+	      autoControl: true,
+	      stopAutoOnclick: true,
+	   });
+	});

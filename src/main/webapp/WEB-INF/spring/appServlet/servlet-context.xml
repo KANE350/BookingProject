@@ -23,8 +23,8 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- 파일저장경로 (윈도우)-->
-	<resources mapping="/savedir/**" location="file:///D:/kgr/savedir/" />
-
+	<!-- <resources mapping="/savedir/**" location="file:///D:/kgr/savedir/" /> -->
+<resources mapping="/savedir/**" location="file:///C:/Users/견디자/Desktop/files/플젝/" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />

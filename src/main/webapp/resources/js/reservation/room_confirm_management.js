@@ -3,7 +3,7 @@
  */
 // 입금 확인 버튼 클릭
 function confrimbtn(path,reserv_num){
-	alert('버튼클릭'+reserv_num);
+	alert('확인되었습니다.');
 	console.log('예약 번호 : '+reserv_num);
 	
 
