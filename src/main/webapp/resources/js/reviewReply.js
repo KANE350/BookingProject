@@ -72,18 +72,18 @@ window.addEventListener('load',()=>{
 	replyList(); //댓글의 리스트 출력 함수 호출
 	
 	
-		//게시물의 댓글 버튼을 클릭했을 때
-		document.getElementById('replyAddShow').addEventListener('click',()=>{
-			//부모의 restep,relevel
-			document.getElementById('restep').value=0;
-			document.getElementById('relevel').value=0;
-			
-			
-			replyInit(); //초기화
-			
-			
-			//댓글추가 div 보이기
-			document.getElementById('divReplyAdd').style.display = '';
+	//게시물의 댓글 버튼을 클릭했을 때
+	document.getElementById('replyAddShow').addEventListener('click',()=>{
+		//부모의 restep,relevel
+		document.getElementById('restep').value=0;
+		document.getElementById('relevel').value=0;
+		
+		
+		replyInit(); //초기화
+		
+		
+		//댓글추가 div 보이기
+		document.getElementById('divReplyAdd').style.display = '';
 	});
 	
 	//댓글추가창에서 취소버튼을 클릭했을때
@@ -156,8 +156,7 @@ window.addEventListener('load',()=>{
 	
 	
 	//추가댓글의 추가버튼 클릭시
-	document.getElementById('replyAdd')
-	.addEventListener('click',()=>{
+	document.getElementById('replyAdd').addEventListener('click',()=>{
 		const board_idx = document.getElementById('board_idx').innerText;
 		const reply_id = document.getElementById('reply_id').value;
 		const reply_content = document.getElementById('reply_content').value;
@@ -179,7 +178,7 @@ window.addEventListener('load',()=>{
 			relevel,
 		};
 		
-	fetch('/third/reply/' , {
+		fetch('/third/reply/' , {
 			method : 'post',
 			headers : {
 				'Content-Type' : 'application/json' //json문자열 전송
@@ -191,22 +190,18 @@ window.addEventListener('load',()=>{
 			console.log(text);
 			replyList();
 		})
-			.catch (console.error)
+		.catch (console.error);
 			
 	});
-	
 	
 	//추가할 내용 읽어오기
 		
 		
-		//댓글수정의 저장버튼을 클릭했을때
-		
+	//댓글수정의 저장버튼을 클릭했을때
 	document.getElementById('replyModify').addEventListener('click',()=>{
 			//rnum, content
-			replyrnumModify
-			replycontentModify
-		const rnum = document.getElementById('replyrnumModify').value;
-		const content = document.getElementById('replycontentModify').value;
+		const rnum = $('#replyrnumModify').val();
+		const content = $('#replycontentModify').val();
 		console.log(rnum);
 		console.log(content);
 		const data = {
@@ -215,7 +210,18 @@ window.addEventListener('load',()=>{
 			
 		};
 		
-	
+		$.ajax({
+			url: '/third/reply/',
+			type: 'put',
+			contentType : 'application/json',
+			data : JSON.stringify(data),
+			success: (text)=>{
+				cosole.log(text);
+				replyList();
+			},
+			error : err => console.error
+			
+		});
 		fetch('/third/reply/',{
 			method : 'put',
 			headers : {

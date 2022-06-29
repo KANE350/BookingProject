@@ -10,8 +10,6 @@
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon" href="${path}/resources/images/favicon.ico" />
 
-<script type="text/javascript" src="${path}/resources/js/login.js"></script>
-
 
 </head>
 <body>
@@ -20,7 +18,8 @@
 		<div>
 			<!--컨텍스트 패스-->
 			<input type="hidden" value="${path}" id="contextpath"> <span
-				id="sessionMember_id" class="btn btn-ligh btn-lg"><a
+				id="member_id" class="btn btn-ligh btn-lg">
+				<a
 				href="${path}/member/info">${sessionScope.member_id}</a></span> <a
 				href="${path}/login" id="aLogin" class="btn btn-secondary btn-lg">로그인</a>
 			<a onclick="aLogout(event, `${path}`)" id="aLogout"
@@ -44,7 +43,7 @@
 	<!-- Responsive navbar-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%">
 		<div class="container">
-			<a class="navbar-brand btn-lg" href="${path}">홈</a>
+			<a class="navbar-brand btn-lg" href="${path}"><font size="4px">홈</font></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -54,13 +53,16 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item btn-lg"><a class="nav-link active"
-						aria-current="page" href="${path}/reservation/">예약</a></li>
+						aria-current="page" href="${path}/reservation/">
+						<font size="4px">
+						예약</font></a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
-						href="${path}/company">찾아오시는 길</a></li>
+						href="${path}/company">
+						<font size="3px">찾아오시는 길</font></a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
-						href="${path}/comu/comulist">커뮤니티</a></li>
+						href="${path}/comu/comulist"><font size="3px">커뮤니티</font></a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
-						href="${path}/review/reviewlist">리뷰</a></li>
+						href="${path}/review/reviewlist"><font size="3px">리뷰</font></a></li>
 
 				</ul>
 			</div>
