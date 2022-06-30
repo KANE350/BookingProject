@@ -1,4 +1,4 @@
-//로그인 버튼을 클릭했을 때
+/*//로그인 버튼을 클릭했을 때
 function loginCheck(e) {
 	e.preventDefault();
 	const email = document.getElementById('email');
@@ -18,4 +18,4 @@ function loginCheck(e) {
 	}
 		
 	document.getElementById('frmLogin').submit();
-}
+}*/

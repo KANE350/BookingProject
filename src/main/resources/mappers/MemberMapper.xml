@@ -5,8 +5,8 @@
   
   <mapper namespace="app.spring.third.MemberMapper">
 	<insert id="insert">
-     insert into member(member_idx,member_name,member_id,member_pw,member_phone,member_birth,member_level)
-	 values(member_idx.nextval, #{member_name}, #{member_id}, #{member_pw}, #{member_phone}, #{member_birth},#{member_level})
+     insert into member(member_name,member_id,member_pw,member_phone,member_birth,member_level)
+	 values( #{member_name}, #{member_id}, #{member_pw}, #{member_phone}, #{member_birth},#{member_level})
 	</insert>
 	
 	<select id="selectOne" resultType="Member">

@@ -5,8 +5,8 @@
 
 <mapper namespace="app.spring.third.ReservationMapper">
 	<insert id="insert_reservation">
-		insert into reservation(reservation_idx, room_idx, re_status, re_startdate,re_enddate,member_id,re_personnel)
-		values(reservation_idx.nextval, #{room_idx}, #{re_status}, #{re_startdate}, #{re_enddate}, #{member_id},
+		insert into reservation( room_idx, re_status, re_startdate,re_enddate,member_id,re_personnel)
+		values( #{room_idx}, #{re_status}, #{re_startdate}, #{re_enddate}, #{member_id},
 		#{re_personnel})
 	</insert>
 
@@ -54,7 +54,7 @@
 	<select id="getConfirm" resultType="map">
 		select re.reservation_idx,  ro.room_name, re.re_startdate, re.re_enddate, re.re_status, re.member_id
 		from reservation re inner join room ro on re.room_idx = ro.room_idx  
-        where re.re_status='n' and re.re_startdate >=  TO_char(sysdate , 'YYYY-MM-DD') order by re.re_startdate asc
+        where re.re_status='n' and re.re_startdate >= date_format(now(), '%Y-%m-%d') order by re.re_startdate asc
 	</select>
 	
 	<update id="upreserv">

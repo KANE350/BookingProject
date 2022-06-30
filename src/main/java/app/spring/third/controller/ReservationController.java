@@ -77,7 +77,7 @@ public class ReservationController {
 	public String reservation(Model model, HttpSession session) {
 		// 룸정보 + 룸 이미지
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
-		
+		System.out.println("roomNroomfile"+roomNroomfile);
 		model.addAttribute("roomNroomfile", roomNroomfile);
 
 		return "reservation/reservation";
@@ -124,14 +124,10 @@ public class ReservationController {
 	
 	// 예약 취소 , 업데이트  선택할수있는곳
 	@PostMapping("userreservation")
-	
 	public String userreservation(HttpSession session, @RequestParam List<String> idx) throws Exception {
 		System.out.println("세션 받아온 id"+session.getAttribute("member_id"));
 		String userid =session.getAttribute("member_id").toString();
-
 		reservationService.delreservation(idx, userid);
-		 
-		
 		return "redirect:/reservation/userreservation";
 	}
 	
@@ -204,8 +200,8 @@ public class ReservationController {
 		  // #7F00FF 보라색
 		  for (Map<String, Object> mmap : mlist) { 
 			  System.out.println("list" + mmap);
-			  map.put("title", mmap.get("ROOM_NAME")); // 방번호
-			  switch (mmap.get("ROOM_NAME").toString()) {
+			  map.put("title", mmap.get("room_name")); // 방번호
+			  switch (mmap.get("room_name").toString()) {
 			  case "하늘": color = "ff7f00";
 					break;
 			  case "땅": color = "#0080ff";
@@ -223,10 +219,10 @@ public class ReservationController {
 			  color = "";
 			  //String start = simpleDateFormat.format(mmap.get("RE_STARTDATE"));
 			  //String start =;
-			  map.put("start",  mmap.get("RE_STARTDATE"));
+			  map.put("start",  mmap.get("re_startdate"));
 			  //String end = simpleDateFormat.format(mmap.get("RE_ENDDATE"));
 			  //String end = .toString();
-			  map.put("end", mmap.get("RE_ENDDATE")+"T23:01:01");
+			  map.put("end", mmap.get("re_enddate")+"T23:01:01");
 			  
 			  resultList.add(map); 
 			  map = new HashMap<String, Object>(); 

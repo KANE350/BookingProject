@@ -17,7 +17,7 @@
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>예약하기</title>
 </head>
 <script type="text/javascript"
 	src="${path}/resources/js/reservation/userreservation.js">
@@ -61,28 +61,28 @@
 							<c:forEach var="list" items="${rlist}">
 								<tr>
 									<td>
-										<input type="checkbox" id="box" name="box" value="${list.RESERVATION_IDX}">
+										<input type="checkbox" id="box" name="box" value="${list.reservation_idx}">
 									</td>
 									<td>
-										<a id="modify_reservation" href="${path}/reservation/updatereservation?idx=${list.RESERVATION_IDX}">${list.RESERVATION_IDX}</a>
+										<a id="modify_reservation" href="${path}/reservation/updatereservation?idx=${list.reservation_idx}">${list.reservation_idx}</a>
 									</td>
 									<td>
 									<!-- 예약완료 -->
 										
-											<c:if test="${list.RE_STATUS eq 'y'}">
+											<c:if test="${list.re_status eq 'y'}">
 												<button type="button" onclick="return false;" class="statusbtn">예약 확정</button>
 											</c:if>
 											<!-- 가예약 -->
-											<c:if test="${list.RE_STATUS ne 'y'}">
+											<c:if test="${list.re_status ne 'y'}">
 												<h3 style="color: green;">관리자 확인중</h3>
 											</c:if>
 									
 									</td>
 									<td>
-										${list.RE_STARTDATE}<br>${list.RE_ENDDATE}
+										${list.re_startdate}<br>${list.re_enddate}
 									</td>
 									<td>
-										${list.ROOM_NAME}
+										${list.room_name}
 									</td>
 								</tr>
 							</c:forEach>

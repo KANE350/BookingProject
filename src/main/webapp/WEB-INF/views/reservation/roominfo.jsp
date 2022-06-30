@@ -9,6 +9,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
+<!-- 슬라이드 --> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <title>Heroic Features - Start Bootstrap Template</title>
 <style>
 #wrapper {
@@ -49,7 +52,7 @@
 		</div>
 	</div>
 
-    <div style =' font-size : 20px ;' >
+    <div style =" font-size : 20px ;" >
 	<p class="fs-5 mb-4" style="text-align: center;">
 	유채꽃 향기 가득한 제주, 그리고 저희 게하어때에 오신 여러분 환영합니다. 저희는 코로나 확산 방지를 위해 <br>
 	위생소독을 1일 1회 실천하고 있으며, 연박 손님의 경우에는 매일 아침 문 앞에 새 수건을 놓아드립니다.<br>

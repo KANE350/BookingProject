@@ -56,10 +56,10 @@
 						<tbody>
 							<c:forEach var="info" items="${roomNroomfile}">
 								<tr>
-									<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}" ></td>
+									<td><input type="radio" name="room_idx" value="${info.room_idx}" ></td>
 									<td id="imgtd">
-										<img src="${path}/resources/images/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
-									<td >${info.ROOM_NAME}</td>
+										<img src="${path}/resources/images/${info.roomfile_filename}" width="150" height="50"></td>
+									<td >${info.room_name}</td>
 									
 						
 								</tr>

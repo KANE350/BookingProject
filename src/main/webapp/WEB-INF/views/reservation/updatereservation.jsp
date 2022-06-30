@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Heroic Features - Start Bootstrap Template</title>
+<title>예약 수정하기</title>
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon"
 	href="${path}/resources/image/favicon.ico" />
@@ -86,11 +86,11 @@
 						<c:forEach var="info" items="${roomNroomfile}">
 							
 							<tr>
-								<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}"></td>
+								<td><input type="radio" name="room_idx" value="${info.room_idx}"></td>
 								<td id="imgtd">
-								<img src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
+								<img src="${path}/savedir/${info.roomfile_filename}" width="150"
 									height="50"></td>
-								<td><span> ${info.ROOM_NAME}</span></td>
+								<td><span> ${info.room_name}</span></td>
 							</tr>
 						</c:forEach>
 					</tbody>

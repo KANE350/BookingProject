@@ -13,13 +13,13 @@
 	<!-- 사용자에 대한 예약정보 -->
 	<select id="select_roomNreservation" resultType="RoomNReserv">
 		select * from
-		room r full outer join reservation res
+		room r inner join reservation res
 		on r.room_idx = res.room_idx
 	</select>
 
 	<!-- 방정보와 방이미지파일 -->
 	<select id="select_roomNroomfile" resultType="map">
-		select * from room full join roomfile on room.room_idx = roomfile.room_idx
+		select * from room inner join roomfile on room.room_idx = roomfile.room_idx
 	</select>
 	
 	<select id="getroom_idx" resultType="int">
