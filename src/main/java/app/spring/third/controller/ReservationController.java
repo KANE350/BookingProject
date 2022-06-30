@@ -35,36 +35,36 @@ import app.spring.third.service.RoomService;
 @Controller
 public class ReservationController {
 
-	// 에약
+	// �뿉�빟
 	@Autowired
 	private ReservationServiceImpl reservationService;
 
-	// 방 정보
+	// 諛� �젙蹂�
 	@Autowired
 	private RoomService roomService;
 
 	
 
-	// 홈
+	// �솃
 	@GetMapping("/")
 	public String test(HttpSession session) {
 		
 		return "reservation/info";
 	}
 
-	// 기본 정보 페이지
+	// 湲곕낯 �젙蹂� �럹�씠吏�
 	@GetMapping("info")
 	public String info() {
 		
 		return "reservation/info";
 	}
 
-	// 예약 안내 페이지
+	// �삁�빟 �븞�궡 �럹�씠吏�
 	@GetMapping("reservationinfo")
 	public String reservationinfo(Model model, HttpSession session) {
 		System.out.println("reservationinfo");
-		System.out.println("세션 값 "+session.getAttribute("member_id"));
-		// 룸정보 + 룸 이미지
+		System.out.println("�꽭�뀡 媛� "+session.getAttribute("member_id"));
+		// 猷몄젙蹂� + 猷� �씠誘몄�
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
 		
 		model.addAttribute("roomNroomfile", roomNroomfile);
@@ -75,17 +75,23 @@ public class ReservationController {
 
 	@GetMapping("reservation")
 	public String reservation(Model model, HttpSession session) {
-		// 룸정보 + 룸 이미지
+		// 猷몄젙蹂� + 猷� �씠誘몄�
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
+<<<<<<< HEAD
 		System.out.println("roomNroomfile"+roomNroomfile);
+=======
+		System.out.println("test"+roomNroomfile);
+>>>>>>> a9c54dca934876be4f9486f4f5672fd2620a9900
 		model.addAttribute("roomNroomfile", roomNroomfile);
 
 		return "reservation/reservation";
 	}
 
-	// 예약 신청
+	// �삁�빟 �떊泥�
 	@PostMapping("reservation")
 	public String reservation(Reservation reservation, RedirectAttributes rattr, HttpSession session) throws ParseException {
+		System.out.println("post");
+		
 		System.out.println(session.getAttribute("member_id"));
 		reservation.setMember_id(session.getAttribute("member_id").toString());		
 		
@@ -94,18 +100,18 @@ public class ReservationController {
 	
 		  
 		  int cnt = reservationService.insert(reservation, session);
-		  // 정상
+		  // �젙�긽
 		 if(cnt == 0) { 
-			 rattr.addFlashAttribute("msg","예약이 되었습니다.");
-			 // 이미 예약이 되어있음.
+			 rattr.addFlashAttribute("msg","�삁�빟�씠 �릺�뿀�뒿�땲�떎.");
+			 // �씠誘� �삁�빟�씠 �릺�뼱�엳�쓬.
 			 return "redirect:reservation";
 		 }else {
-			 rattr.addFlashAttribute("msg","이미 예약이 되어있습니다.");
+			 rattr.addFlashAttribute("msg","�씠誘� �삁�빟�씠 �릺�뼱�엳�뒿�땲�떎.");
 			 return "reservation";
 		 }
 		
 	}
-	   //방 상세보기를 클릭했을 때 
+	   //諛� �긽�꽭蹂닿린瑜� �겢由��뻽�쓣 �븣 
 	   @GetMapping("roominfo")
 	   public String roominfo (int room_idx, Model model) {
 	      model.addAttribute("room_idx", roomService.selectOne(room_idx));
@@ -113,7 +119,7 @@ public class ReservationController {
 	   }
 	@GetMapping("userreservation")
 	public String userreservation(HttpSession session, Model model, RedirectAttributes ratrr) {
-		System.out.println("user 아이디 : "+session.getAttribute("member_id"));
+		System.out.println("user �븘�씠�뵒 : "+session.getAttribute("member_id"));
 		String userid = session.getAttribute("member_id").toString();
 		List<Reservation> rlist = reservationService.getreserv(userid);
 
@@ -122,20 +128,20 @@ public class ReservationController {
 		return "reservation/userreservation";
 	}
 	
-	// 예약 취소 , 업데이트  선택할수있는곳
+	// �삁�빟 痍⑥냼 , �뾽�뜲�씠�듃  �꽑�깮�븷�닔�엳�뒗怨�
 	@PostMapping("userreservation")
 	public String userreservation(HttpSession session, @RequestParam List<String> idx) throws Exception {
-		System.out.println("세션 받아온 id"+session.getAttribute("member_id"));
+		System.out.println("�꽭�뀡 諛쏆븘�삩 id"+session.getAttribute("member_id"));
 		String userid =session.getAttribute("member_id").toString();
 		reservationService.delreservation(idx, userid);
 		return "redirect:/reservation/userreservation";
 	}
 	
 	
-	// 예약 업데이트 (유저별)
+	// �삁�빟 �뾽�뜲�씠�듃 (�쑀��蹂�)
 	@GetMapping("updatereservation")
 	public String updatereservation(@RequestParam int idx, Model model, HttpSession session) {
-		// 룸정보 + 룸 이미지
+		// 猷몄젙蹂� + 猷� �씠誘몄�
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
 		model.addAttribute("roomNroomfile", roomNroomfile);
 		session.setAttribute("reservidx", idx);
@@ -145,7 +151,7 @@ public class ReservationController {
 		return "/reservation/updatereservation";
 	}
 	
-	// 수정
+	// �닔�젙
 	@PostMapping("updatereservation")
 	public String updatereservation(RedirectAttributes rattr ,Reservation reservation,Model model, @RequestParam String roominfo, HttpSession session) {
 		String idx =session.getAttribute("reservidx").toString();
@@ -158,59 +164,65 @@ public class ReservationController {
 		reservation.setMember_id(userid);
 		reservation.setReservation_idx(Integer.parseInt(idx));
 		System.out.println(reservation);
-		// 해당 예약건 수정
+		// �빐�떦 �삁�빟嫄� �닔�젙
 		int cnt = reservationService.updatereservation(reservation, roominfo);
 		if(cnt == 1) {
-			rattr.addFlashAttribute("msg","예약 정보 수정 완료");
+			rattr.addFlashAttribute("msg","�삁�빟 �젙蹂� �닔�젙 �셿猷�");
 			return "redirect:/reservation/userreservation";
 		}else {
-			rattr.addFlashAttribute("msg", "수정중 이상 발생 다시 시도해주세요");
+			rattr.addFlashAttribute("msg", "�닔�젙以� �씠�긽 諛쒖깮 �떎�떆 �떆�룄�빐二쇱꽭�슂");
 			return "redirect:/reservation/updatereservation";
 		}
 	}
 	
 	/*
-	 * // 예약 취소
+	 * // �삁�빟 痍⑥냼
 	 * 
 	 * @PostMapping("cancelreservation") public String
 	 * cancelreservation(@RequestParam int idx[]) { System.out.println(idx);
 	 * reservationService.delreservation(map, userid); return ""; }
 	 */
 	
-// 캘린더 
+// 罹섎┛�뜑 
 	@ResponseBody
 	@RequestMapping("CallCalendar")
 	public List<Map<String, Object>> home(Model model, HttpServletRequest request) {
 
-		// 조인목록
+		// 議곗씤紐⑸줉
 		List<Map<String, Object>> mlist = reservationService.getuserNreserv();
 		System.out.println("mlist"+mlist);
-		// 리턴값
+		// 由ы꽩媛�
 		List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
 		
 		 // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
-		  //원하는 데이터 포맷 지정 // 항목추가 
+		  //�썝�븯�뒗 �뜲�씠�꽣 �룷留� 吏��젙 // �빆紐⑹텛媛� 
 		  Map<String, Object> map = new HashMap<String, Object>(); 
 
-		  // 캘린더 색상
+		  // 罹섎┛�뜑 �깋�긽
 		  String color = "";
-		  // #ff7f00 주황
-		  // #0080ff 하늘색
-		  // #33FF33 초록색
-		  // #7F00FF 보라색
+		  // #ff7f00 二쇳솴
+		  // #0080ff �븯�뒛�깋
+		  // #33FF33 珥덈줉�깋
+		  // #7F00FF 蹂대씪�깋
 		  for (Map<String, Object> mmap : mlist) { 
 			  System.out.println("list" + mmap);
+<<<<<<< HEAD
 			  map.put("title", mmap.get("room_name")); // 방번호
 			  switch (mmap.get("room_name").toString()) {
 			  case "하늘": color = "ff7f00";
+=======
+			  map.put("title", mmap.get("ROOM_NAME")); // 諛⑸쾲�샇
+			  switch (mmap.get("ROOM_NAME").toString()) {
+			  case "�븯�뒛": color = "ff7f00";
+>>>>>>> a9c54dca934876be4f9486f4f5672fd2620a9900
 					break;
-			  case "땅": color = "#0080ff";
+			  case "�븙": color = "#0080ff";
 				  	break;  
-			  case "지하": color = "#33FF33";
+			  case "吏��븯": color = "#33FF33";
 					break;
-			  case "용암": color = "#7F00FF";
+			  case "�슜�븫": color = "#7F00FF";
 					break;
-			  case "천국": color = "#000000";
+			  case "泥쒓뎅": color = "#000000";
 					break;
 			default: color = "#000000";
 				break;

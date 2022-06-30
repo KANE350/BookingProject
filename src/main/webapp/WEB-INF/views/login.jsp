@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="${path}/resources/js/header.js"></script>
 <script type="text/javascript" src="${path}/resources/js/login.js"></script>
 </head>
 <body>

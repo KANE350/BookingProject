@@ -42,7 +42,7 @@
 						<span class="day">입실</span> <input type="date" class="startdate" name="re_startdate"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="day">퇴실</span> <input type="date" class="enddate" name="re_enddate">
 					</div>
-				
+				<%-- ${roomNroomfile} --%>
 					<table class="roominfo">
 						<thead>
 							<tr>
@@ -68,7 +68,7 @@
 					</table>
 					<div class="buttom-button">
 					
-					<button class="reservButton" onclick="btnclick('${path}', event)">예약하기</button>
+					<button class="reservButton"  onclick="btnclick('${path}', event)">예약하기</button>
 					</div>
 				</form>
 			</div>

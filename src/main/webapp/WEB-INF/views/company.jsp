@@ -28,10 +28,8 @@
 	</script>
 </head>
 <body>
-	<div class="container">
 		<%@ include file="header.jsp"%>
 		<div id="map" style="width: 100%; height: 400px;"></div>
-	</div>
 
 
 

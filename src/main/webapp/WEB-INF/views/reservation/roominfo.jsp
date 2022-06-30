@@ -13,6 +13,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <title>Heroic Features - Start Bootstrap Template</title>
+<!-- 제이쿼리 연결 -->
+<!-- 슬라이드 --> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src ="${path}/resources/js/jquery-3.6.0.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <style>
 #wrapper {
 	width: 600px;

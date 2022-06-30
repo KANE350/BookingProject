@@ -203,8 +203,10 @@ window.addEventListener('load',()=>{
 		
 	document.getElementById('replyModify').addEventListener('click',()=>{
 			//rnum, content
-		const rnum = $('#replyrnumModify').val();
-		const content = $('#replycontentModify').val();
+			replyrnumModify
+			replycontentModify
+		const rnum = document.getElementById('replyrnumModify').value;
+		const content = document.getElementById('replycontentModify').value;
 		console.log(rnum);
 		console.log(content);
 		const data = {
@@ -213,18 +215,7 @@ window.addEventListener('load',()=>{
 			
 		};
 		
-		$.ajax({
-			url: '/third/reply/',
-			type: 'put',
-			contentType : 'application/json',
-			data : JSON.stringify(data),
-			success: (text)=>{
-				cosole.log(text);
-				replyList();
-			},
-			error : err => console.error
-			
-		});
+	
 		fetch('/third/reply/',{
 			method : 'put',
 			headers : {

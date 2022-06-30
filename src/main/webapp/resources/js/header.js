@@ -12,17 +12,17 @@ function aLogout(e, path) {
 }
 	
 
-	const sessionMember_id = $('#sessionMember_id').text().trim();
+const member_id = $('#member_id').text().trim();
 
-	if (sessionMember_id == '') {//로그인 전
-		document.getElementById("aLogin").style.display = '';
-		document.getElementById("aLogout").style.display = 'none';
-		document.getElementById("aJoin").style.display = '';
-	} else {//로그인 후
-		document.getElementById("aLogin").style.display = 'none';
-		document.getElementById("aLogout").style.display = '';
-		document.getElementById("aJoin").style.display = 'none';
-	}
+if (member_id == '') {//로그인 전
+	document.getElementById("aLogin").style.display = '';
+	document.getElementById("aLogout").style.display = 'none';
+	document.getElementById("aJoin").style.display = '';
+} else {//로그인 후
+	document.getElementById("aLogin").style.display = 'none';
+	document.getElementById("aLogout").style.display = '';
+	document.getElementById("aJoin").style.display = 'none';
+}
 
 
 

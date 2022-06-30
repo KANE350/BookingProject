@@ -26,7 +26,6 @@ import app.spring.third.dto.Reply;
 import app.spring.third.service.ReplyService;
 
 @RestController
-
 @RequestMapping("reply")
 public class ReplyController {
 	@Autowired
