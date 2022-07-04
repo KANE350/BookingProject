@@ -21,4 +21,6 @@ public interface CboardService {
 
 	ErrorCode update(ComuBoard comuboard);
 
+	int updateLikeCnt(int cboard_idx);
+
 }

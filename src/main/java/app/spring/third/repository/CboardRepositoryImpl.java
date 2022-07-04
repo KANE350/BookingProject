@@ -56,4 +56,10 @@ public class CboardRepositoryImpl implements CboardRepository{
 		return sqlsession.update("app.spring.third.C_BoardMapper.update",comuboard);
 	}
 
+	@Override
+	public int updateLikeCnt(int cboard_idx) {
+		
+		return sqlsession.update("app.spring.third.C_BoardMapper.updateLikeCnt",cboard_idx);
+	}
+
 }

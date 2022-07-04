@@ -21,4 +21,6 @@ public interface CboardRepository {
 
 	public int update(ComuBoard comuboard);
 
+	public int updateLikeCnt(int cboard_idx);
+
 }

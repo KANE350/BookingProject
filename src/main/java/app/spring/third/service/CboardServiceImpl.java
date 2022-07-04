@@ -26,7 +26,7 @@ public class CboardServiceImpl implements CboardService {
 		int perBlock = page.getPerBlock();
 		
 		//1)게시물의 시작번호
-		int startNum = (curPage-1) * perPage + 1;
+		int startNum = (curPage-1) * perPage;
 		
 		//2)게시물의 끝번호
 		int endNum = startNum + perPage -1 ;
@@ -86,6 +86,13 @@ public class CboardServiceImpl implements CboardService {
 	public ErrorCode update(ComuBoard comuboard) {
 		cboardRepository.update(comuboard);
 		return ErrorCode.SUCCESS_MODIFY;
+	}
+
+
+	@Override
+	public int updateLikeCnt(int cboard_idx) {
+		// TODO Auto-generated method stub
+		return cboardRepository.updateLikeCnt(cboard_idx);
 	}
 
 }

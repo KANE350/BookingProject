@@ -20,8 +20,8 @@ window.addEventListener('load',()=>{
 	//이벤트 달기 
 	document.getElementById('like').addEventListener('click',()=>{
 		//ajax방식 좋아요 update
-		const board_idx = document.getElementById('board_idx').innerText;
-		console.log(board_idx);
+		const cboard_idx = document.getElementById('cboard_idx').innerText;
+		console.log(cboard_idx);
 		
 		fetch(`/third/comu/like/${cboard_idx}`, {
 			method : 'put',

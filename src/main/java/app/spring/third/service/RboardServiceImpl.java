@@ -37,7 +37,7 @@ public class RboardServiceImpl implements RboardService {
 				int perBlock = page.getPerBlock();
 				
 				//1)게시물의 시작번호
-				int startNum = (curPage-1) * perPage + 1;
+				int startNum = (curPage-1) * perPage;
 				
 				//2)게시물의 끝번호
 				int endNum = startNum + perPage -1 ;

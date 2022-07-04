@@ -9,14 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import app.spring.third.advice.ErrorCode;
 import app.spring.third.dto.ComuBoard;
 import app.spring.third.dto.Page;
+import app.spring.third.dto.ReviewBoard;
 import app.spring.third.service.CboardService;
 
 
@@ -132,4 +136,15 @@ public String listhome(Page page, Model model) { //2)page객체 생성
 			return "redirect:comudetail";
 			
 		}
+		
+		
+		//좋아요 +1
+				@ResponseBody
+				@PutMapping("like/{cboard_idx}")
+				public String likecnt(@PathVariable int cboard_idx) {
+					cboardService.updateLikeCnt(cboard_idx);
+					ComuBoard comuboard = cboardService.selectOne(cboard_idx);
+					//좋아요를 문자로 변경후 리턴
+					return String.valueOf(comuboard.getCboard_likes());
+				}
 }
