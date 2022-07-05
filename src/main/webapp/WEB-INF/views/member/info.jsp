@@ -9,7 +9,6 @@
 <script type="text/javascript" src="${path}/resources/js/info.js"></script>
 </head>
 <body>
-	<div class="container">
 		<%@ include file="../header.jsp"%>
 		<h2>회원정보</h2>
 		<form action="${path}/member/info" method="post" name="frmInfo">
@@ -54,10 +53,8 @@
 		<!--부트스트랩-->
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
-			<div class="container">
 				<p class="m-0 text-center text-white">Copyright &copy; Your How
 					about Geha</p>
-			</div>
 		</footer>
 		<!-- Bootstrap core JS-->
 		<script
@@ -65,6 +62,5 @@
 
 
 
-	</div>
 </body>
 </html>

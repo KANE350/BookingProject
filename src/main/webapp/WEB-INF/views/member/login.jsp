@@ -9,7 +9,6 @@
 <%-- <script type="text/javascript" src="${path}/resources/js/header.js"></script> --%>
 </head>
 <body>
-	<div class="container">
 		<%@ include file="../header.jsp"%>
 		<h2>로그인</h2>
 		<form id="frmLogin" action="${path}/login" method="post">
@@ -32,15 +31,12 @@
 				</tr>
 			</table>
 		</form>
-	</div>
 
 	<!--부트스트랩-->
 	<!-- Footer-->
 	<footer class="py-5 bg-dark">
-		<div class="container">
 			<p class="m-0 text-center text-white">Copyright &copy; Your How
 				about Geha</p>
-		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
 	<script

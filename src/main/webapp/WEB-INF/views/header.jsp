@@ -42,7 +42,6 @@
 	<!--부트스트랩 새로넣음-->
 	<!-- Responsive navbar-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%">
-		<div class="container">
 			<a class="navbar-brand btn-lg" href="${path}"><font size="4px">홈</font></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -65,7 +64,6 @@
 						href="${path}/review/reviewlist"><font size="3px">리뷰</font></a></li>
 
 				</ul>
-			</div>
 		</div>
 	</nav>
 
