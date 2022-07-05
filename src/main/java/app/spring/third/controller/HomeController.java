@@ -76,10 +76,7 @@ public class HomeController {
 	
 	// page
 	@GetMapping("room_management")
-	public void room_management() {
-		System.out.println("Get Page");
-		
-		
+	public void room_management() {	
 	}
 	
 	// 방 처리할 confirm 목록
@@ -108,8 +105,7 @@ public class HomeController {
 	public List<Map<String, Object>> room_management(HttpSession session, Model model) {
 		//1. 전체 리스트
 		List<Map<String, Object>> mlist = reservationService.getAllreserv();
-		
-	
+		System.out.println("테스트 전체리스트 : "  +mlist);
 		return mlist;
 	}
 	
