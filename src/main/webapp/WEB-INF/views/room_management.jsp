@@ -16,8 +16,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 <script type="text/x-handlebars-template" id="template_source">
 	<h3>전체 예약 현황</h3>
-	{{#each .}}
-		
+		{{#each .}}
 		<table id="roomtbl">
    			<thead> 
        		 	 <th>예약 번호</th> 
@@ -28,47 +27,20 @@
    				  
   			</thead> 
    			 <tbody> 
-       			<tr> 
-           			<td>{{RESERVATION_IDX}}</td> 
-           			<td>{{RE_STATUS}}</td>
-					<td>{{ROOM_NAME}}</td> 
-            		<td>{{MEMBER_ID}}</td>
-					<td>{{RE_STARTDATE}}<br>{{RE_ENDDATE}}</td>
-
-        		</tr> 
-   			 </tbody> 
-		</table>
-	{{/each}}
-</script>
-<script type="text/x-handlebars-template" id="template_source2">
 	
-	{{#each .}}
-		
-		<table id="roomtbl">
-   			<thead> 
-
-       		 	 <th>예약 번호</th> 
-      			 <th>예약 상태</th> 
-       			 <th>객실 명</th>
-   				 <th>아이디</th>
-   				 <th>입실 / 퇴실</th>
-				 <th>입금확인</th>
-   				  
-  			</thead> 
-   			 <tbody> 
        			<tr> 
+           			<td>{{reservation_idx}}</td> 
+           			<td>{{re_status}}</td>
+					<td>{{room_name}}</td> 
+            		<td>{{member_id}}</td>
+					<td>{{re_startdate}}<br>{{re_enddate}}</td>
 
-           			<td>{{RESERVATION_IDX}}</td> 
-           			<td>{{RE_STATUS}}</td>
-					<td>{{ROOM_NAME}}</td> 
-            		<td>{{MEMBER_ID}}</td>
-					<td>{{RE_STARTDATE}}<br>{{RE_ENDDATE}}</td>
-					<td><button class="confirmbtn" id="confirmbtn" onclick="btnclick()" value="{{RESERVATION_IDX}}">입금확인</button></td>
         		</tr> 
    			 </tbody> 
 		</table>
 	{{/each}}
 </script>
+
 <body>
 	<%@ include file="./header.jsp"%>
 

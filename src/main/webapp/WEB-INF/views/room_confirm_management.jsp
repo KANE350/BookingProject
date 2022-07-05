@@ -32,12 +32,12 @@
 						<tr>
 	
 
-							<td>${confirm.RESERVATION_IDX}</td>
-							<td>${confirm.ROOM_NAME}</td>
-							<td>${confirm.MEMBER_ID}</td>
-							<td>${confirm.RE_STARTDATE}<br>${confirm.RE_ENDDATE}</td>
+							<td>${confirm.reservation_idx}</td>
+							<td>${confirm.room_name}</td>
+							<td>${confirm.member_id}</td>
+							<td>${confirm.re_startdate}<br>${confirm.re_enddate}</td>
 							<td><button id="confrimbtn1" type="button"
-									onclick="confrimbtn('${path}','${confirm.RESERVATION_IDX}')">확인</button></td>
+									onclick="confrimbtn('${path}','${confirm.reservation_idx}')">확인</button></td>
 						</tr>
 					</tbody>
 
