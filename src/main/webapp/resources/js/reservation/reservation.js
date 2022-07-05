@@ -120,7 +120,7 @@ function btnclick(path, event){
 	
 
 function btnclick(path, event){
-alert('test');
+
 	event.preventDefault();
 	
 	if($('.enddate').val() == ''){
