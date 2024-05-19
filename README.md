@@ -20,7 +20,7 @@
 
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (8)_1](https://github.com/KANE350/BookingProject/assets/97603476/5ec5ef20-d465-4f32-9dfe-b5ea555a8668)
 
-# **V.. ERD구성 및 테이블 명세서 **
+# **V. ERD구성 및 테이블 명세서 **
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (9)_1](https://github.com/KANE350/BookingProject/assets/97603476/6ac233ca-cb25-4fe3-8e2d-dae5d8ee632d)
 
 # **VI. 담당 기능  **
