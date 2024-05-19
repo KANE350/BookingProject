@@ -1,4 +1,4 @@
-# **I. 프로젝트 소개**
+# **I. 프로젝트**
 ![슬라이드1](https://github.com/KANE350/BookingProject/assets/97603476/f98b815d-538e-49c4-83cc-6138777f3416)
 
 
