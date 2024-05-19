@@ -1,44 +1,75 @@
 # **I. 프로젝트 소개**
-![김가람_예약프로젝트_포트폴리오_새 책갈피_1](https://github.com/KANE350/BookingProject/assets/97603476/b73a0efe-bf25-4c76-b2a1-bf067603ef16)
+![슬라이드1](https://github.com/KANE350/BookingProject/assets/97603476/f98b815d-538e-49c4-83cc-6138777f3416)
+
 
 
 # **II. 주제 및 설계방향**
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (3)_1](https://github.com/KANE350/BookingProject/assets/97603476/4ffbe303-77f4-4d18-8d0f-b589a32738b9)
+![슬라이드3](https://github.com/KANE350/BookingProject/assets/97603476/68841de9-4f07-4f1e-94e5-b390451bf710)
+
 
 # **III. 개발 언어 및 개발 환경**
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (4)_1](https://github.com/KANE350/BookingProject/assets/97603476/57a65e08-e6c3-47c3-bc7f-400d8cc8ee4c)
+![슬라이드4](https://github.com/KANE350/BookingProject/assets/97603476/5d94d2e4-c985-4372-addd-c2e38efbd114)
 
 
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (5)_1](https://github.com/KANE350/BookingProject/assets/97603476/f7568c1a-52f9-4d27-872d-775d0e2a30b4)
+
+![슬라이드5](https://github.com/KANE350/BookingProject/assets/97603476/50b57894-5a65-4d2d-9ae5-4a9cbc1ca6f7)
+
 
 # **IV. 기능 분석 및 설계**
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (6)_1](https://github.com/KANE350/BookingProject/assets/97603476/0bedc36c-c33f-481c-b875-812177d6c018)
+![슬라이드6](https://github.com/KANE350/BookingProject/assets/97603476/79fe3a09-6a82-460b-b815-ea9a316d583a)
 
 
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (7)_1](https://github.com/KANE350/BookingProject/assets/97603476/8382cb5a-d671-4cb7-9dda-8d429467a5f2)
+![슬라이드7](https://github.com/KANE350/BookingProject/assets/97603476/c915ee6b-6b2a-4b57-a810-88999a38f6ad)
+
 
 # **V. ERD구성 및 테이블 명세서**
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (8)_1](https://github.com/KANE350/BookingProject/assets/97603476/5ec5ef20-d465-4f32-9dfe-b5ea555a8668)
+![슬라이드8](https://github.com/KANE350/BookingProject/assets/97603476/3288b536-3f4a-4d04-b357-b3806d490c8a)
 
 
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (9)_1](https://github.com/KANE350/BookingProject/assets/97603476/6ac233ca-cb25-4fe3-8e2d-dae5d8ee632d)
 
-# **VI. 담당 파트의 기능 **
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (10)_1](https://github.com/KANE350/BookingProject/assets/97603476/e69b20c7-6596-48bc-bd54-4de32bead5c2)
+# **VI. 담당 기능**
+![슬라이드9](https://github.com/KANE350/BookingProject/assets/97603476/1038ab85-a530-442e-bd18-8696ce0bc1b3)
 
-
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (11)_1](https://github.com/KANE350/BookingProject/assets/97603476/2efd3805-8f37-4659-9336-612e8f008398)
+![슬라이드10](https://github.com/KANE350/BookingProject/assets/97603476/688ce80e-740c-4633-9ad8-2af4f23877df)
 
 
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (12)_1](https://github.com/KANE350/BookingProject/assets/97603476/14009f67-728e-49c0-9521-d662fb7912c4)
+![슬라이드11](https://github.com/KANE350/BookingProject/assets/97603476/29dab55f-4356-46f2-a878-eb32616cd12c)
 
 
-![김가람_예약프로젝트_포트폴리오_새 책갈피 (13)_1](https://github.com/KANE350/BookingProject/assets/97603476/8a922e43-6715-4dbb-a59c-2c57bf2e0a34)
+![슬라이드12](https://github.com/KANE350/BookingProject/assets/97603476/0333e3ee-dca6-4d0f-b125-fc67212bff18)
+
+![슬라이드13](https://github.com/KANE350/BookingProject/assets/97603476/041d8624-9bc2-4d01-86a6-8c3c3c41f76b)
+
+![슬라이드14](https://github.com/KANE350/BookingProject/assets/97603476/8ae3c463-0df0-4818-8a51-644deae918a5)
+
+![슬라이드15](https://github.com/KANE350/BookingProject/assets/97603476/c46fef55-fe74-420c-95a8-b102c0615456)
 
 
-![김가람_예약프로젝트_포트폴리오_슬라이드 14_1](https://github.com/KANE350/BookingProject/assets/97603476/3ef91d8b-b29f-494f-8bcb-d485ffb3df82)
+# **VII. 그 외 기능**
+
+![슬라이드16](https://github.com/KANE350/BookingProject/assets/97603476/a3ecf62c-cef5-418c-a632-62e620eaf9e7)
 
 
-![김가람_예약프로젝트_포트폴리오_슬라이드 15_1](https://github.com/KANE350/BookingProject/assets/97603476/67f82f73-7bbd-423e-acdd-81a895644454)
+![슬라이드17](https://github.com/KANE350/BookingProject/assets/97603476/452b4766-7047-4d8b-941d-62616ad5eb5d)
+
+
+![슬라이드18](https://github.com/KANE350/BookingProject/assets/97603476/bdb22f4f-072f-4483-b9be-fa7bc5ec2afd)
+
+
+![슬라이드19](https://github.com/KANE350/BookingProject/assets/97603476/ef370df9-4eb6-4e83-97c6-db31629b392d)
+
+
+![슬라이드20](https://github.com/KANE350/BookingProject/assets/97603476/ac140fd3-5277-4a0e-a9ae-36511be5204c)
+
+
+![슬라이드21](https://github.com/KANE350/BookingProject/assets/97603476/38848a9a-0606-4ba5-9370-f0e05498e182)
+
+
+![슬라이드22](https://github.com/KANE350/BookingProject/assets/97603476/ce10271a-2ef0-4407-80cd-18fc18d41d7c)
+
+
+
+
+
 
 
