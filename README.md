@@ -1,3 +1,4 @@
+
 ![김가람_예약프로젝트_포트폴리오_새 책갈피_1](https://github.com/KANE350/BookingProject/assets/97603476/b73a0efe-bf25-4c76-b2a1-bf067603ef16)
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (2)_1](https://github.com/KANE350/BookingProject/assets/97603476/18ff4ce3-2a90-4e57-97bd-af51b75d4ac0)
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (3)_1](https://github.com/KANE350/BookingProject/assets/97603476/4ffbe303-77f4-4d18-8d0f-b589a32738b9)
@@ -11,3 +12,5 @@
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (11)_1](https://github.com/KANE350/BookingProject/assets/97603476/2efd3805-8f37-4659-9336-612e8f008398)
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (12)_1](https://github.com/KANE350/BookingProject/assets/97603476/14009f67-728e-49c0-9521-d662fb7912c4)
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (13)_1](https://github.com/KANE350/BookingProject/assets/97603476/8a922e43-6715-4dbb-a59c-2c57bf2e0a34)
+![김가람_예약프로젝트_포트폴리오_슬라이드 14_1](https://github.com/KANE350/BookingProject/assets/97603476/3ef91d8b-b29f-494f-8bcb-d485ffb3df82)
+![김가람_예약프로젝트_포트폴리오_슬라이드 15_1](https://github.com/KANE350/BookingProject/assets/97603476/67f82f73-7bbd-423e-acdd-81a895644454)
