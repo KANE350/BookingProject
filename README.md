@@ -23,7 +23,7 @@
 
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (9)_1](https://github.com/KANE350/BookingProject/assets/97603476/6ac233ca-cb25-4fe3-8e2d-dae5d8ee632d)
 
-# **VI. 담당 기능**
+# **VI. 담당 파트의 기능 **
 ![김가람_예약프로젝트_포트폴리오_새 책갈피 (10)_1](https://github.com/KANE350/BookingProject/assets/97603476/e69b20c7-6596-48bc-bd54-4de32bead5c2)
 
 
