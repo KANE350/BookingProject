@@ -4,7 +4,7 @@
 
 
 # **II. 주제 및 설계방향**
-[리드미수정.pdf](https://github.com/user-attachments/files/16146865/default.pdf)
+![리드미수정.pdf](https://github.com/user-attachments/files/16146865/default.pdf)
 
 
 # **III. 개발 언어 및 개발 환경**
