@@ -4,7 +4,7 @@
 
 
 # **II. 주제 및 설계방향**
-![슬라이드3](https://github.com/KANE350/BookingProject/assets/97603476/68841de9-4f07-4f1e-94e5-b390451bf710)
+[리드미수정.pdf](https://github.com/user-attachments/files/16146865/default.pdf)
 
 
 # **III. 개발 언어 및 개발 환경**
